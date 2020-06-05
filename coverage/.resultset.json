@@ -3,10 +3,12 @@
     "coverage": {
       "/Users/ryn/turing/1module/projects/enigma_root/enigma/lib/enigma.rb": {
         "lines": [
-
+          1,
+          null,
+          null
         ]
       }
     },
-    "timestamp": 1591382243
+    "timestamp": 1591383034
   }
 }
