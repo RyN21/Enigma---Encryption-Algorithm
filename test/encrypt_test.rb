@@ -3,5 +3,4 @@ require './lib/enigma'
 
 class EncryptTest < Minitest::Test
   
-
 end
