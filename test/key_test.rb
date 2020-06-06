@@ -3,11 +3,15 @@ require './lib/key'
 
 class KeyTest < Minitest::Test
   def test_it_exists_and_has_attributes
-    @a_key = Key.new
-    @b_key = Key.new
-    @c_key = Key.new
-    @d_key = Key.new
-    assert_instance_of Key, @a_key
+    @key = Key.new
+
+    assert_instance_of Key, @key
+  end
+
+  def test_it_can_generate_5_random_numbers
+    @key = Key.new
+    # @key.expects(:random_digit_generator).returns("10247")
+    assert_equal "10247", @key.random_digit_generator
   end
 
 end
