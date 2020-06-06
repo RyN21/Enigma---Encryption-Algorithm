@@ -11,22 +11,24 @@ class KeyTest < Minitest::Test
 
   def test_it_can_generate_5_random_numbers
     @key = Key.new
-    @key.expects(:random_5digits).returns([1, 0, 2, 4 ,7])
-    assert_equal [1, 0, 2, 4, 7], @key.random_5digits
+    @key.expects(:random_5digits).returns(['1', '0', '2', '4', '7'])
+    assert_equal ['1', '0', '2', '4', '7'], @key.random_5digits
   end
 
-  def test_it_can_pair_5_digits
+  def test_it_can_pair_digits
     @key = Key.new
-    # @key.expects(:random_5digits).returns([1, 0, 2, 4 ,7])
-    assert_equal [[1,0] [0,2] [2,4] [4,7]], @key.pair_digits
+    # @key.expects(:random_5digits).returns(['1', '0', '2', '4', '7'])
+    @key.pair_digits(@key.random_5digits)
+
+    assert_equal ['10', '02', '24', '47'], @key.digits
   end
 
   def test_it_can_assign_keys
     skip
     @key = Key.new
-    # @key.expects(:random_5digits).returns([1, 0, 2, 4 ,7])
+    @key.expects(:random_5digits).returns([1, 0, 2, 4 ,7])
 
     expected = ({A: 10, B: 02, C: 24, D: 47})
-    assert_equal expected, @key.assign_keys
+    assert_equal expected, @key.assign_keys(@key.digits)
   end
 end
