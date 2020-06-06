@@ -34,7 +34,20 @@ class ShiftTest < Minitest::Test
     assert_equal expected, @shift.merge_to_shift_keys
   end
 
+  def test_it_can_cycle
+    @key = Key.new
+    @offset = Offset.new
+    @shift = Shift.new(@key, @offset)
+    @key.expects(:random_5digits).returns(['1', '0', '2', '4', '7'])
+    @key.assign_keys
+    @offset.assign_offsets
+    @shift.merge_to_shift_keys
+
+    assert_equal 'f', @shift.cycle("fladfadsfa")
+  end
+
   def test_it_can_shift
+    skip
     @key = Key.new
     @offset = Offset.new
     @shift = Shift.new(@key, @offset)

@@ -18,5 +18,33 @@ class Shift
     end
   end
 
+  def cycle(message)
+    chars = message.chars
+    crypted = []
+    while chars.length > 0
+      @shift_keys.each do |_, number|
+        require "pry"; binding.pry
+        alphabet.index(chars[0]).rotate(number)
 
+          chars.shift
+      
+      end
+    end
+  end
+
+  # def cycle(message)
+  #   chars = message.chars
+  #   @shift_keys.until do |_, number|
+  #     chars.map do |char|
+  #       starting_index = alphabet.index(char)
+  #     end
+  #     @shift_keys.each do |key|
+  #     end
+  #   end
+  # end
+
+  def shift(message)
+    message.chars.map do |char|
+    end
+  end
 end
