@@ -12,8 +12,10 @@ class OffsetTest < Minitest::Test
 
   def test_it_can_change_date_format
     @offset = Offset.new
+    # @offset2 = Offset.new("01/21/1990")
     @offset.change_date_format
     assert_equal '050620', @offset.date
+    # assert_equal '210190', @offset2.date
   end
 
   def test_it_can_square_date

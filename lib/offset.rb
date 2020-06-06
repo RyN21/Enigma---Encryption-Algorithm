@@ -16,5 +16,10 @@ class Offset
     date.to_i * date.to_i
   end
 
-  
+  def last_four_digits
+    array = date_squared.to_s.chars
+    until array.length == 4 do array.shift
+    end
+    array.join
+  end
 end
