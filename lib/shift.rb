@@ -7,6 +7,10 @@ class Shift
     @offset = offset
   end
 
+  def alphabet
+    ("a".."z").to_a << " "
+  end
+
   def shift
     @shift = @key.keys.merge!(@offset.offsets) do |s, k, o|
       k.to_i + o.to_i
