@@ -17,18 +17,18 @@ class KeyTest < Minitest::Test
 
   def test_it_can_pair_digits
     @key = Key.new
-    # @key.expects(:random_5digits).returns(['1', '0', '2', '4', '7'])
+    @key.expects(:random_5digits).returns(['1', '0', '2', '4', '7'])
     @key.pair_digits(@key.random_5digits)
 
-    assert_equal ['10', '02', '24', '47'], @key.digits
+    assert_equal ['10', '02', '24', '47'], @key.split_digits
   end
 
   def test_it_can_assign_keys
-    skip
     @key = Key.new
     @key.expects(:random_5digits).returns([1, 0, 2, 4 ,7])
+    @key.pair_digits(@key.random_5digits)
 
-    expected = ({A: 10, B: 02, C: 24, D: 47})
-    assert_equal expected, @key.assign_keys(@key.digits)
+    expected = ({A: '10', B: '02', C: '24', D: '47'})
+    assert_equal expected, @key.assign_keys
   end
 end
