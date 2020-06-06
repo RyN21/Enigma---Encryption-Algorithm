@@ -10,13 +10,14 @@ class ShiftTest < Minitest::Test
     @shift = Shift.new(@key, @offset)
 
     assert_instance_of Shift, @shift
+    assert_equal ({}), @shift.shift_keys
     assert_equal @key, @shift.key
     assert_equal @offset, @shift.offset
   end
 
   def test_it_has_alphabet
     @shift = Shift.new(@key, @offset)
-    
+
     expected = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", " "]
     assert_equal expected, @shift.alphabet
   end
@@ -30,6 +31,6 @@ class ShiftTest < Minitest::Test
     @offset.assign_offsets
 
     expected = ({A: 14, B: 6, C: 24, D: 47})
-    assert_equal expected, @shift.shift
+    assert_equal expected, @shift.merge_to_shift_keys
   end
 end
