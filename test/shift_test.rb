@@ -8,6 +8,7 @@ class ShiftTest < Minitest::Test
     @key = Key.new
     @offset = Offset.new
     @shift = Shift.new(@key, @offset)
+    @key.expects(:random_5digits).returns(['1', '0', '2', '4', '7'])
 
     assert_instance_of Shift, @shift
     assert_equal @key, @shift.key

@@ -20,7 +20,8 @@ class Key
   end
 
   def assign_keys
-    #possibly call pair digits here
+    random = random_5digits
+    pair_digits(random)
     @keys = @keys.transform_values do |key|
       key = split_digits.shift
     end

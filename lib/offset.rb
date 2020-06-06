@@ -28,6 +28,5 @@ class Offset
     @offsets = @offsets.transform_values do |offset|
       offset = array.shift
     end
-    @offsets
   end
 end
