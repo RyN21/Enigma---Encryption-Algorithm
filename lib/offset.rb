@@ -10,4 +10,6 @@ class Offset
   def change_date_format
     @date = date.strftime('%d,%m,%y').delete(',')
   end
+
+
 end

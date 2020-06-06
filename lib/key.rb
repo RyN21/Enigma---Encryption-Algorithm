@@ -20,6 +20,7 @@ class Key
   end
 
   def assign_keys
+    #possibly call pair digits here
     @keys.transform_values do |key|
       key = split_digits.shift
     end
