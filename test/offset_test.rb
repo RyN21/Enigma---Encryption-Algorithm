@@ -8,6 +8,7 @@ class OffsetTest < Minitest::Test
 
     assert_instance_of Offset, @offset
     assert_equal Date.today, @offset.date
+    assert_equal ({A: 0, B: 0, C: 0, D: 0}), @offset.offsets
   end
 
   def test_it_can_change_date_format
@@ -25,7 +26,14 @@ class OffsetTest < Minitest::Test
 
   def test_it_can_take_last_4_digits_from_squared_date
     @offset = Offset.new
-    assert_equal '4400', @offset.last_four_digits
+    assert_equal ['4', '4', '0', '0'], @offset.last_4_digits
+  end
+
+  def test_it_can_assign_offsets
+
+    expected = ({A: '4', B: '4', C: '0', D: '0'})
+
+    assert_equal expected, @offset.assign_offsets
   end
 
 end
