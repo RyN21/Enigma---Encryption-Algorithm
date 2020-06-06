@@ -8,14 +8,24 @@
           null
         ]
       },
+      "/Users/ryn/turing/1module/projects/enigma_root/enigma/lib/offset.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
       "/Users/ryn/turing/1module/projects/enigma_root/enigma/lib/key.rb": {
         "lines": [
           1,
           1,
           null,
           1,
-          4,
-          4,
+          0,
+          0,
           null,
           null,
           1,
@@ -25,21 +35,21 @@
           null,
           null,
           1,
-          2,
-          8,
-          8,
+          0,
+          0,
+          0,
           null,
           null,
           null,
           1,
-          1,
-          4,
+          0,
+          0,
           null,
           null,
           null
         ]
       }
     },
-    "timestamp": 1591411325
+    "timestamp": 1591412135
   }
 }
