@@ -8,50 +8,14 @@
           null
         ]
       },
-      "/Users/ryn/turing/1module/projects/enigma_root/enigma/lib/offset.rb": {
-        "lines": [
-          1,
-          null,
-          1,
-          1,
-          null,
-          1,
-          1,
-          1,
-          null,
-          null,
-          1,
-          0,
-          null,
-          null,
-          1,
-          0,
-          0,
-          null,
-          null,
-          1,
-          0,
-          0,
-          0,
-          null,
-          null,
-          1,
-          0,
-          0,
-          0,
-          null,
-          null,
-          null
-        ]
-      },
       "/Users/ryn/turing/1module/projects/enigma_root/enigma/lib/key.rb": {
         "lines": [
           1,
           1,
           null,
           1,
-          1,
-          1,
+          4,
+          4,
           null,
           null,
           1,
@@ -61,35 +25,22 @@
           null,
           null,
           1,
-          0,
-          0,
-          0,
+          2,
+          8,
+          8,
           null,
           null,
           null,
           1,
           null,
-          0,
-          0,
-          null,
-          null,
-          null
-        ]
-      },
-      "/Users/ryn/turing/1module/projects/enigma_root/enigma/lib/shift.rb": {
-        "lines": [
           1,
-          1,
-          null,
-          1,
-          1,
-          1,
+          4,
           null,
           null,
           null
         ]
       }
     },
-    "timestamp": 1591450991
+    "timestamp": 1591451200
   }
 }
