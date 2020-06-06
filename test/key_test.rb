@@ -27,6 +27,7 @@ class KeyTest < Minitest::Test
     @key = Key.new
     @key.expects(:random_5digits).returns([1, 0, 2, 4 ,7])
     @key.assign_keys
+
     expected = ({A: '10', B: '02', C: '24', D: '47'})
     assert_equal expected, @key.keys
   end

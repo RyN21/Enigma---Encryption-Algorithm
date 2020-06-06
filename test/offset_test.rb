@@ -32,6 +32,7 @@ class OffsetTest < Minitest::Test
   def test_it_can_assign_offsets
     @offset = Offset.new
     @offset.assign_offsets
+    
     expected = ({A: '4', B: '4', C: '0', D: '0'})
     assert_equal expected, @offset.offsets
   end
