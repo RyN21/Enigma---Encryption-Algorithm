@@ -25,8 +25,9 @@ class Offset
 
   def assign_offsets
     array = last_4_digits
-    offsets.transform_values do |offset|
+    @offsets = @offsets.transform_values do |offset|
       offset = array.shift
     end
+    @offsets
   end
 end
