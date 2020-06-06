@@ -15,4 +15,6 @@ class Offset
     change_date_format
     date.to_i * date.to_i
   end
+
+  
 end

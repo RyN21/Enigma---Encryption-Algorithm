@@ -21,4 +21,9 @@ class OffsetTest < Minitest::Test
     assert_equal 2562384400, @offset.date_squared
   end
 
+  def test_it_can_take_last_4_digits_from_squared_date
+    @offset = Offset.new
+    assert_equal '4400', @offset.last_four_digits
+  end
+
 end
