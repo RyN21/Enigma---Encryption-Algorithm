@@ -1,6 +1,7 @@
 require './test/test_helper'
 require './lib/offset'
 require './lib/key'
+require './lib/shift'
 
 class ShiftTest < Minitest::Test
   def test_it_exists_and_has_attributes
@@ -15,11 +16,3 @@ class ShiftTest < Minitest::Test
 
 
 end
-
-
-
-
-
-
-assert_instance_of Key, @key
-assert_equal ({A: 0, B: 0, C: 0, D: 0}), @key.keys
