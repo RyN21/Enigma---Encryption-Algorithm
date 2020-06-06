@@ -17,4 +17,6 @@ class Shift
       k.to_i + o.to_i
     end
   end
+
+
 end
