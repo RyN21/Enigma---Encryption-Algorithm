@@ -7,5 +7,7 @@ class Offset
     @date = date
   end
 
-
+  def change_date_format
+    @date = date.strftime('%d,%m,%y').delete(',')
+  end
 end
