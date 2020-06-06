@@ -1,14 +1,15 @@
 class Shift
-  attr_reader :key, :offset
+  attr_reader :key, :offset, :alphabet
 
   def initialize(key, offset)
     @shift = Hash.new(0)
     @key = key
     @offset = offset
+    @alphabet = []
   end
 
   def alphabet
-    ("a".."z").to_a << " "
+    @alphabet = ("a".."z").to_a << " "
   end
 
   def shift
