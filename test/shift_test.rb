@@ -15,5 +15,13 @@ class ShiftTest < Minitest::Test
     assert_equal @offset, @shift.offset
   end
 
+  def test_it_can_shift
+    @key = Key.new
+    @offset = Offset.new
+    @shift = Shift.new(@key, @offset)
+    @key.expects(:random_5digits).returns(['1', '0', '2', '4', '7'])
 
+    expected = ({A: '14', B: '06', C: '24', D: '47'})
+    assert_equal expected, @shift.shift
+  end
 end

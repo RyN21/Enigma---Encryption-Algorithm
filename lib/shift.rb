@@ -5,4 +5,6 @@ class Shift
     @key = key
     @offset = offset
   end
+
+
 end
