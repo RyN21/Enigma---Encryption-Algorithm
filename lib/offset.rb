@@ -1,3 +1,5 @@
+require 'date'
+
 class Offset
 
   def initialize(date)
