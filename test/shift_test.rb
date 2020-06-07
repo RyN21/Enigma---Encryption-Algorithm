@@ -70,5 +70,7 @@ class ShiftTest < Minitest::Test
     @shift.merge_to_shift_keys
 
     assert_equal "vkieb", @shift.shift("hello")
+    assert_equal "vkiebfthera", @shift.shift("hello world")
+    assert_equal "vkieb,xpbxix!", @shift.shift("hello, world!")
   end
 end
