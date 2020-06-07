@@ -43,7 +43,7 @@ class ShiftTest < Minitest::Test
     @offset.assign_offsets
     @shift.merge_to_shift_keys
 
-    assert_equal 'f', @shift.cycle("fladfadsfa")
+    assert_equal 'f', @shift.cycle("fladf ads! fa")
   end
 
   def test_it_can_shift

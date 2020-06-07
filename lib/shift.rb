@@ -18,19 +18,61 @@ class Shift
     end
   end
 
-  def cycle(message)
-    chars = message.chars
-    crypted = []
-    while chars.length > 0
-      @shift_keys.each do |_, number|
-        require "pry"; binding.pry
-        alphabet.index(chars[0]).rotate(number)
+  def cycle(number)
+    aplhbet
+  end
 
-          chars.shift
-      
+  def shift(message)
+    chars = message.chars
+    encrypted = []
+    while chars.length > 0 do
+      if chars.length > 0 && chars[0] == alphabet.any?
+        @split_digits[:A]
+        encrypted << chars.shift
+      elsif chars.length > 0 && chars[0] == !alphabet.any?
+        encrypted << chars.shift
+      end
+      if chars.length > 0 && chars[0] == alphabet.any?
+        @split_digits[:B]
+        encrypted << chars.shift
+      elsif chars.length > 0 && chars[0] == !alphabet.any?
+        encrypted << chars.shift
+      end  
+      if chars.length > 0 && chars[0] == alphabet.any?
+        @split_digits[:C]
+        encrypted << chars.shift
+      elsif chars.length > 0 && chars[0] == !alphabet.any?
+        encrypted << chars.shift
+      end
+      if chars.length > 0 && chars[0] == alphabet.any?
+        @split_digits[:D]
+        encrypted << chars.shift
+      elsif chars.length > 0 && chars[0] == !alphabet.any?
+        encrypted << chars.shift
       end
     end
   end
+
+    # alph_index = alphabet.index(chars[0])
+    # alphabet[alph_index]
+    # require "pry"; binding.pry
+
+
+    # while chars.length > 0
+    #   @shift_keys.each do |_, number|
+    #     crypted << alphabet.index(chars[0])
+    #     chars.shift
+    #   end
+    #   crypted
+    # end
+
+
+  # chars = message.chars
+  # crypted = []
+  # @shift_keys.each do |_, value|
+  #   crypted << chars.rotate(value)
+  # end
+  # crypted
 
   # def cycle(message)
   #   chars = message.chars
