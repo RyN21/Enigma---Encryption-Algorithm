@@ -7,12 +7,12 @@ class DeshiftTest < Minitest::Test
   def test_it_exists_and_has_attributes
     @key = Key.new
     @offset = Offset.new
-    @deshift = Deshift.new(@key, "June 6, 2020")
+    @deshift = Deshift.new(@key, @offset)
 
     assert_instance_of Deshift, @deshift
-    assert_equal ({}), @deshift.shift_keys
+    assert_equal ({}), @deshift.deshift_keys
     assert_equal @key, @deshift.key
-    assert_equal "June 6, 2020", @deshift.date
+    assert_equal @offset, @deshift.offset
   end
 
   def test_it_has_alphabet
@@ -24,8 +24,7 @@ class DeshiftTest < Minitest::Test
     assert_equal expected, @deshift.alphabet
   end
 
-  def test_it_can_merge_to_shift_key
-    skip
+  def test_it_can_merge_to_deshift_key
     @key = Key.new
     @offset = Offset.new
     @deshift = Deshift.new(@key, @offset)
@@ -34,14 +33,13 @@ class DeshiftTest < Minitest::Test
     @offset.assign_offsets
 
     expected = ({A: 14, B: 6, C: 24, D: 47})
-    assert_equal expected, @deshift.make_shift_keys
+    assert_equal expected, @deshift.make_deshift_keys
   end
 
   def test_it_find_index_in_alphabet
-    skip
     @key = Key.new
     @offset = Offset.new
-    @deshift = Deshift.new(@key, @offset)
+    @deshift = Deshift.new(@key, "June 6, 2020")
     @key.expects(:random_5digits).returns(['1', '0', '2', '4', '7'])
     @key.assign_keys
     @offset.assign_offsets
@@ -54,7 +52,7 @@ class DeshiftTest < Minitest::Test
     skip
     @key = Key.new
     @offset = Offset.new
-    @deshift = Deshift.new(@key, @offset)
+    @deshift = Deshift.new(@key, "June 6, 2020")
     @key.expects(:random_5digits).returns(['1', '0', '2', '4', '7'])
     @key.assign_keys
     @offset.assign_offsets
@@ -67,7 +65,7 @@ class DeshiftTest < Minitest::Test
     skip
     @key = Key.new
     @offset = Offset.new
-    @deshift = Deshift.new(@key, @offset)
+    @deshift = Deshift.new(@key, "June 6, 2020")
     @key.expects(:random_5digits).returns(['1', '0', '2', '4', '7'])
     @key.assign_keys
     @offset.assign_offsets
