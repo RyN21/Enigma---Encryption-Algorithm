@@ -23,31 +23,33 @@ class Shift
     chars = message.chars
     encrypted = []
     while chars.length > 0 do
-      if chars.length > 0 && chars[0] == alphabet.any?
-        @split_digits[:A]
-        encrypted << chars.shift
-      elsif chars.length > 0 && chars[0] == !alphabet.any?
-        encrypted << chars.shift
+      if chars.length > 0 && alphabet.include?(chars[0])
+        require "pry"; binding.pry
+        encrypted << cycle(0, @shift_keys[:A])
+      elsif chars.length > 0 && !alphabet.include?(chars[0])
+        encrypted << chars[0]
       end
-      if chars.length > 0 && chars[0] == alphabet.any?
-        @split_digits[:B]
-        encrypted << chars.shift
-      elsif chars.length > 0 && chars[0] == !alphabet.any?
-        encrypted << chars.shift
+      chars.delete_at(0)
+      if chars.length > 0 && alphabet.include?(chars[0])
+        encrypted << cycle(0, @shift_keys[:B])
+      elsif chars.length > 0 && !alphabet.include?(chars[0])
+        encrypted << chars[0]
       end
-      if chars.length > 0 && chars[0] == alphabet.any?
-        @split_digits[:C]
-        encrypted << chars.shift
-      elsif chars.length > 0 && chars[0] == !alphabet.any?
-        encrypted << chars.shift
+      chars.delete_at(0)
+      if chars.length > 0 && alphabet.include?(chars[0])
+        encrypted << cycle(0, @shift_keys[:C])
+      elsif chars.length > 0 && !alphabet.include?(chars[0])
+        encrypted << chars[0]
       end
-      if chars.length > 0 && chars[0] == alphabet.any?
-        @split_digits[:D]
-        encrypted << chars.shift
-      elsif chars.length > 0 && chars[0] == !alphabet.any?
-        encrypted << chars.shift
+      chars.delete_at(0)
+      if chars.length > 0 && alphabet.include?(chars[0])
+        encrypted << cycle(0, @shift_keys[:D])
+      elsif chars.length > 0 && !alphabet.include?(chars[0])
+        encrypted << chars[0]
       end
+      chars.delete_at(0)
     end
+    encrypted
   end
 
     # alph_index = alphabet.index(chars[0])
@@ -82,8 +84,5 @@ class Shift
   #   end
   # end
 
-  def shift(message)
-    message.chars.map do |char|
-    end
-  end
+
 end
