@@ -16,6 +16,8 @@ class ShiftTest < Minitest::Test
   end
 
   def test_it_has_alphabet
+    @key = Key.new
+    @offset = Offset.new
     @shift = Shift.new(@key, @offset)
 
     expected = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", " "]
@@ -43,7 +45,7 @@ class ShiftTest < Minitest::Test
     @offset.assign_offsets
     @shift.merge_to_shift_keys
 
-    assert_equal 'f', @shift.cycle("fladf ads! fa")
+    assert_equal 'i', @shift.cycle(2, 6)
   end
 
   def test_it_can_shift

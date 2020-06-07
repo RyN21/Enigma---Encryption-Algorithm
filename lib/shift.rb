@@ -5,10 +5,6 @@ class Shift
     @shift_keys = {}
     @key = key
     @offset = offset
-    @alphabet = []
-  end
-
-  def alphabet
     @alphabet = ("a".."z").to_a << " "
   end
 
@@ -18,8 +14,9 @@ class Shift
     end
   end
 
-  def cycle(number)
-    aplhbet
+  def cycle(index, shift_number)
+    shifted = alphabet.rotate(shift_number)
+    shifted[index]
   end
 
   def shift(message)
@@ -37,7 +34,7 @@ class Shift
         encrypted << chars.shift
       elsif chars.length > 0 && chars[0] == !alphabet.any?
         encrypted << chars.shift
-      end  
+      end
       if chars.length > 0 && chars[0] == alphabet.any?
         @split_digits[:C]
         encrypted << chars.shift
