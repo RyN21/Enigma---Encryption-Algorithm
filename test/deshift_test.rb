@@ -39,37 +39,36 @@ class DeshiftTest < Minitest::Test
   def test_it_find_index_in_alphabet
     @key = Key.new
     @offset = Offset.new
-    @deshift = Deshift.new(@key, "June 6, 2020")
+    @deshift = Deshift.new(@key, @offset)
     @key.expects(:random_5digits).returns(['1', '0', '2', '4', '7'])
     @key.assign_keys
     @offset.assign_offsets
-    @deshift.make_shift_keys
+    @deshift.make_deshift_keys
 
     assert_equal 7, @deshift.find_index('h')
   end
 
-  def test_it_can_cycle
-    skip
+  def test_it_can_cycle_negative
     @key = Key.new
     @offset = Offset.new
-    @deshift = Deshift.new(@key, "June 6, 2020")
+    @deshift = Deshift.new(@key, @offset)
     @key.expects(:random_5digits).returns(['1', '0', '2', '4', '7'])
     @key.assign_keys
     @offset.assign_offsets
-    @deshift.make_shift_keys
+    @deshift.make_deshift_keys
 
-    assert_equal 'i', @deshift.cycle(2, 6)
+    assert_equal 'x', @deshift.cycle_negative(2, 6)
   end
 
   def test_it_can_shift
     skip
     @key = Key.new
     @offset = Offset.new
-    @deshift = Deshift.new(@key, "June 6, 2020")
+    @deshift = Deshift.new(@key, @offset)
     @key.expects(:random_5digits).returns(['1', '0', '2', '4', '7'])
     @key.assign_keys
     @offset.assign_offsets
-    @deshift.make_shift_keys
+    @deshift.make_deshift_keys
 
     assert_equal "hello", @deshift.deshift("vkieb")
     assert_equal "heLLo world", @deshift.deshift("vkiebfthera")

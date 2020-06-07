@@ -14,4 +14,14 @@ class Deshift
     end
   end
 
+  ### add to a module?!?! VV
+  def find_index(data)
+    chars = data.chars
+    alphabet.index(chars[0])
+  end
+
+  def cycle_negative(index, shift_number)
+    shifted = alphabet.rotate(-shift_number)
+    shifted[index]
+  end
 end
