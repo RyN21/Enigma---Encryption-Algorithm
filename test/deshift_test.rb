@@ -60,8 +60,7 @@ class DeshiftTest < Minitest::Test
     assert_equal 'x', @deshift.cycle_negative(2, 6)
   end
 
-  def test_it_can_shift
-    skip
+  def test_it_can_deshift
     @key = Key.new
     @offset = Offset.new
     @deshift = Deshift.new(@key, @offset)
@@ -71,7 +70,7 @@ class DeshiftTest < Minitest::Test
     @deshift.make_deshift_keys
 
     assert_equal "hello", @deshift.deshift("vkieb")
-    assert_equal "heLLo world", @deshift.deshift("vkiebfthera")
-    assert_equal "HEllo, wORLd!", @deshift.deshift("vkieb,xpbxix!")
+    assert_equal "hello world", @deshift.deshift("vkiebfthera")
+    assert_equal "hello, world!", @deshift.deshift("vkieb,xpbxix!")
   end
 end
