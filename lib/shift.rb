@@ -14,6 +14,11 @@ class Shift
     end
   end
 
+  def find_index(data)
+    chars = data.chars
+    alphabet.index(chars[0])
+  end
+
   def cycle(index, shift_number)
     shifted = alphabet.rotate(shift_number)
     shifted[index]
@@ -24,65 +29,30 @@ class Shift
     encrypted = []
     while chars.length > 0 do
       if chars.length > 0 && alphabet.include?(chars[0])
-        require "pry"; binding.pry
-        encrypted << cycle(0, @shift_keys[:A])
+        encrypted << cycle(find_index(chars[0]), @shift_keys[:A])
       elsif chars.length > 0 && !alphabet.include?(chars[0])
         encrypted << chars[0]
       end
       chars.delete_at(0)
       if chars.length > 0 && alphabet.include?(chars[0])
-        encrypted << cycle(0, @shift_keys[:B])
+        encrypted << cycle(find_index(chars[0]), @shift_keys[:B])
       elsif chars.length > 0 && !alphabet.include?(chars[0])
         encrypted << chars[0]
       end
       chars.delete_at(0)
       if chars.length > 0 && alphabet.include?(chars[0])
-        encrypted << cycle(0, @shift_keys[:C])
+        encrypted << cycle(find_index(chars[0]), @shift_keys[:C])
       elsif chars.length > 0 && !alphabet.include?(chars[0])
         encrypted << chars[0]
       end
       chars.delete_at(0)
       if chars.length > 0 && alphabet.include?(chars[0])
-        encrypted << cycle(0, @shift_keys[:D])
+        encrypted << cycle(find_index(chars[0]), @shift_keys[:D])
       elsif chars.length > 0 && !alphabet.include?(chars[0])
         encrypted << chars[0]
       end
       chars.delete_at(0)
     end
-    encrypted
+    encrypted.join
   end
-
-    # alph_index = alphabet.index(chars[0])
-    # alphabet[alph_index]
-    # require "pry"; binding.pry
-
-
-    # while chars.length > 0
-    #   @shift_keys.each do |_, number|
-    #     crypted << alphabet.index(chars[0])
-    #     chars.shift
-    #   end
-    #   crypted
-    # end
-
-
-  # chars = message.chars
-  # crypted = []
-  # @shift_keys.each do |_, value|
-  #   crypted << chars.rotate(value)
-  # end
-  # crypted
-
-  # def cycle(message)
-  #   chars = message.chars
-  #   @shift_keys.until do |_, number|
-  #     chars.map do |char|
-  #       starting_index = alphabet.index(char)
-  #     end
-  #     @shift_keys.each do |key|
-  #     end
-  #   end
-  # end
-
-
 end

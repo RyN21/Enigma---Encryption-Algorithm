@@ -45,7 +45,7 @@ class ShiftTest < Minitest::Test
     @offset.assign_offsets
     @shift.merge_to_shift_keys
 
-    assert_equal 'i', @shift.cycle(2, 6)
+    assert_equal 7, @shift.find_index('h')
   end
 
   def test_it_can_cycle
