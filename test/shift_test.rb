@@ -33,7 +33,7 @@ class ShiftTest < Minitest::Test
     @offset.assign_offsets
 
     expected = ({A: 14, B: 6, C: 24, D: 47})
-    assert_equal expected, @shift.merge_to_shift_keys
+    assert_equal expected, @shift.make_shift_keys
   end
 
   def test_it_find_index_in_alphabet
@@ -43,7 +43,7 @@ class ShiftTest < Minitest::Test
     @key.expects(:random_5digits).returns(['1', '0', '2', '4', '7'])
     @key.assign_keys
     @offset.assign_offsets
-    @shift.merge_to_shift_keys
+    @shift.make_shift_keys
 
     assert_equal 7, @shift.find_index('h')
   end
@@ -55,7 +55,7 @@ class ShiftTest < Minitest::Test
     @key.expects(:random_5digits).returns(['1', '0', '2', '4', '7'])
     @key.assign_keys
     @offset.assign_offsets
-    @shift.merge_to_shift_keys
+    @shift.make_shift_keys
 
     assert_equal 'i', @shift.cycle(2, 6)
   end
@@ -67,7 +67,7 @@ class ShiftTest < Minitest::Test
     @key.expects(:random_5digits).returns(['1', '0', '2', '4', '7'])
     @key.assign_keys
     @offset.assign_offsets
-    @shift.merge_to_shift_keys
+    @shift.make_shift_keys
 
     assert_equal "vkieb", @shift.shift("hello")
     assert_equal "vkiebfthera", @shift.shift("hello world")

@@ -8,7 +8,7 @@ class Shift
     @alphabet = ("a".."z").to_a << " "
   end
 
-  def merge_to_shift_keys
+  def make_shift_keys
     @shift_keys = @key.keys.merge!(@offset.offsets) do |s, k, o|
       k.to_i + o.to_i
     end
