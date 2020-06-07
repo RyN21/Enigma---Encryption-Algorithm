@@ -7,22 +7,21 @@ class DeshiftTest < Minitest::Test
   def test_it_exists_and_has_attributes
     @key = Key.new
     @offset = Offset.new
-    @deshift = Deshift.new(@key, @offset)
+    @deshift = Deshift.new(@key, "June 6, 2020")
 
-    assert_instance_of Dehift, @deshift
+    assert_instance_of Deshift, @deshift
     assert_equal ({}), @deshift.shift_keys
     assert_equal @key, @deshift.key
-    assert_equal @offset, @deshift.offset
+    assert_equal "June 6, 2020", @deshift.date
   end
 
   def test_it_has_alphabet
-    skip
     @key = Key.new
     @offset = Offset.new
     @deshift = Deshift.new(@key, @offset)
 
     expected = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", " "]
-    assert_equal expected, @shift.alphabet
+    assert_equal expected, @deshift.alphabet
   end
 
   def test_it_can_merge_to_shift_key

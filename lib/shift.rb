@@ -3,9 +3,9 @@ class Shift
 
   def initialize(key, offset)
     @shift_keys = {}
-    @key = key
-    @offset = offset
-    @alphabet = ("a".."z").to_a << " "
+    @key        = key
+    @offset     = offset
+    @alphabet   = ("a".."z").to_a << " "
   end
 
   def make_shift_keys
