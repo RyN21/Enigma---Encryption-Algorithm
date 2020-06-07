@@ -25,7 +25,7 @@ class Shift
   end
 
   def shift(message)
-    chars = message.chars
+    chars = message.downcase.chars
     encrypted = []
     while chars.length > 0 do
       if chars.length > 0 && alphabet.include?(chars[0])
