@@ -52,12 +52,20 @@ class EnigmaTest < Minitest::Test
   end
 
   def test_it_can_decyrpt_with_todays_date
-    skip
-    assert_equal expected, @enigma.decrypt(encrypted[:encryption], "02715")
+    @enigma = Enigma.new
+    @enigma.stubs(:random_5digits).returns(['0', '2', '7', '1', '5'])
+
+    expected = ({
+      decryption: "hello, world!",
+      key: "02715",
+      date: "080620"
+      })
+
+    assert_equal expected, @enigma.decrypt("nib u,qkuvbs!", "02715")
   end
 
-  def test_it_can_encrypt_with_random_key_and_todays_date
-    skip
-    assert_equal expected, @enigma.encrypt("hello world")
-  end
+  # def test_it_can_encrypt_with_random_key_and_todays_date
+  #   skip
+  #   assert_equal expected, @enigma.encrypt("hello world")
+  # end
 end
