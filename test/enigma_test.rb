@@ -1,9 +1,13 @@
 require './test/test_helper'
 require './lib/enigma'
+require './lib/offset'
+require './lib/key'
+require './lib/shift'
+require './lib/deshift'
 
 class EnigmaTest < Minitest::Test
   def test_it_exists_and_has_attributes
-    @enigma = Enigma.new
+    @enigma = Enigma.new("Hello, world!", "10247", "080620")
     assert_instance_of Enigma, @enigma
   end
 
