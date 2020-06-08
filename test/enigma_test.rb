@@ -12,14 +12,6 @@ class EnigmaTest < Minitest::Test
     assert_instance_of Enigma, @enigma
   end
 
-  # def test_it_can_setup_keys_and_offsets
-  #   @enigma = Enigma.new
-  #   # @key.expects(:random_5digits).returns(['1', '0', '2', '4', '7'])
-  #   @enigma.setup
-  #   assert_equal @key, @enigma.key
-  #   assert_equal @date, @enigma.date
-  # end
-
   def test_it_can_encyrpt
     @enigma = Enigma.new
     @enigma.stubs(:random_5digits).returns(['0', '2', '7', '1', '5'])
@@ -32,18 +24,19 @@ class EnigmaTest < Minitest::Test
 
     assert_equal expected, @enigma.encrypt("Hello, world!", "02715", "040895")
   end
-  #
-  # def test_it_can_decrypt
-  #   skip
-  #   expected = {
-  #     decryption: "hello world",
-  #     key: "02715",
-  #     date: "040895"
-  #   }
-  #
-  #   assert_equal expected, @enigma.decrypt("keder ohulw", "02715", "040895")
-  # end
-  #
+
+  def test_it_can_decrypt
+    @enigma = Enigma.new
+    @enigma.stubs(:random_5digits).returns(['0', '2', '7', '1', '5'])
+    expected = {
+      decryption: "hello world",
+      key: "02715",
+      date: "040895"
+    }
+
+    assert_equal expected, @enigma.decrypt("keder ohulw", "02715", "040895")
+  end
+
   # def test_it_can_encyrpt_with_todays_date
   #   skip
   #   @encrypted = @enigma.encrypt("hello world", "02715")
