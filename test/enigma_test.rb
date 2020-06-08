@@ -8,6 +8,7 @@ require './lib/deshift'
 class EnigmaTest < Minitest::Test
   def test_it_exists_and_has_attributes
     @enigma = Enigma.new("Hello, world!", "10247", "080620")
+    
     assert_instance_of Enigma, @enigma
   end
 
