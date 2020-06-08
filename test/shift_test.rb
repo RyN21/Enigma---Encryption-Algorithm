@@ -30,10 +30,12 @@ class ShiftTest < Minitest::Test
     @shift = Shift.new(@key, @offset)
     @key.expects(:random_5digits).returns(['1', '0', '2', '4', '7'])
     @key.assign_keys
+    @offset.change_date_format
     @offset.assign_offsets
+    @shift.make_shift_keys
 
     expected = ({A: 14, B: 6, C: 24, D: 47})
-    assert_equal expected, @shift.make_shift_keys
+    assert_equal expected, @shift.shift_keys
   end
 
   def test_it_find_index_in_alphabet
@@ -42,6 +44,7 @@ class ShiftTest < Minitest::Test
     @shift = Shift.new(@key, @offset)
     @key.expects(:random_5digits).returns(['1', '0', '2', '4', '7'])
     @key.assign_keys
+    @offset.change_date_format
     @offset.assign_offsets
     @shift.make_shift_keys
 
@@ -54,6 +57,7 @@ class ShiftTest < Minitest::Test
     @shift = Shift.new(@key, @offset)
     @key.expects(:random_5digits).returns(['1', '0', '2', '4', '7'])
     @key.assign_keys
+    @offset.change_date_format
     @offset.assign_offsets
     @shift.make_shift_keys
 
@@ -66,6 +70,7 @@ class ShiftTest < Minitest::Test
     @shift = Shift.new(@key, @offset)
     @key.expects(:random_5digits).returns(['1', '0', '2', '4', '7'])
     @key.assign_keys
+    @offset.change_date_format
     @offset.assign_offsets
     @shift.make_shift_keys
 
