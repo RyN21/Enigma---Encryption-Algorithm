@@ -5,21 +5,21 @@ require './lib/key'
 require './lib/shift'
 require './lib/deshift'
 
-puts "-----------------"
+puts "==================================="
 puts "WELCOME TO ENIGMA"
-puts "-----------------"
-puts "-----------------"
-
-
+puts "==================================="
 @enigma = Enigma.new
 message_file = ARGV[0]
 encrypted_file = ARGV[1]
-puts "THIS MESSAGE WILL BE ENCRYPTED:"
-puts "-----------------"
+puts "MESSAGE TO BE ENCRYPTED:"
+puts "==================================="
 puts File.read(message_file)
-puts "-----------------"
-puts @enigma.encrypt(File.read(message_file))
-puts encrypted_file
-require "pry"; binding.pry
-
-puts "Created #{} with the key #{@enigma.key.five_digit_key} and date #{@enigma.offset.date.to_i}"
+puts "==================================="
+encrypted_file = @enigma.encrypt(File.read(message_file))
+File.open("encrypted.txt", "w") { |f| f.write  "#{encrypted_file[:encryption]}" }
+puts "ENCRYPTION CREATED:"
+puts "==================================="
+puts "#{encrypted_file[:encryption]}"
+puts "==================================="
+puts "CREATED WITH KEY:#{@enigma.key.five_digit_key}\nCREATED  WITH DATE#{@enigma.offset.date.to_i}"
+puts "==================================="
