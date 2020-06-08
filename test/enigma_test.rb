@@ -65,7 +65,14 @@ class EnigmaTest < Minitest::Test
   end
 
   def test_it_can_encrypt_with_random_key_and_todays_date
-    skip
-    assert_equal expected, @enigma.encrypt("hello world")
+    @enigma = Enigma.new
+
+    expected = ({
+      encryption: "hello, world!",
+      key: "02715",
+      date: "080620"
+      })
+
+    assert_equal expected, @enigma.encrypt("hello, world!")
   end
 end

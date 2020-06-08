@@ -8,7 +8,7 @@ class Enigma
     @key     = Key.new
   end
 
-  def encrypt(message, keys, date = Date.today)
+  def encrypt(message, keys = @key.random_5digits.join, date = Date.today)
     encrypted = Hash.new
     @key.pair_digits(keys.chars)
     @key.assign_keys
