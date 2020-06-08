@@ -22,4 +22,4 @@ puts @enigma.encrypt(File.read(message_file))
 puts encrypted_file
 require "pry"; binding.pry
 
-puts "Created #{encrypted_file} with the key #{} and date #{}"
+puts "Created #{} with the key #{@enigma.key.five_digit_key} and date #{@enigma.offset.date.to_i}"

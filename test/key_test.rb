@@ -25,7 +25,8 @@ class KeyTest < Minitest::Test
 
   def test_it_can_assign_keys
     @key = Key.new
-    # @key.expects(:random_5digits).returns([1, 0, 2, 4 ,7])
+    @key.expects(:random_5digits).returns([1, 0, 2, 4 ,7])
+    @key.pair_digits
     @key.assign_keys
 
     expected = ({A: '10', B: '02', C: '24', D: '47'})
