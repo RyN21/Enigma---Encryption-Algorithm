@@ -12,23 +12,22 @@ class EnigmaTest < Minitest::Test
     assert_instance_of Enigma, @enigma
   end
 
-  def test_it_can_setup_keys_and_offsets
-    assert_equal @enigma.setup
-  end
+  # def test_it_can_setup_keys_and_offsets
+  #   @enigma = Enigma.new
+  #   # @key.expects(:random_5digits).returns(['1', '0', '2', '4', '7'])
+  #   @enigma.setup
+  #   assert_equal @key, @enigma.key
+  #   assert_equal @date, @enigma.date
+  # end
 
   def test_it_can_encyrpt
-    skip
     @enigma = Enigma.new
-    @key = Key.new
-    @offset = Offset.new
-    @shift = Shift.new(@key, @offset)
-    @key.expects(:random_5digits).returns(['1', '0', '2', '4', '7'])
-
+    @enigma.stubs(:random_5digits).returns(['0', '2', '7', '1', '5'])
 
     expected = ({
-      encryption: "vkieb,xpbxix!",
-      key: "10247",
-      date: "080620"
+      encryption: "keder,sprrdx!",
+      key: "02715",
+      date: "040895"
     })
 
     assert_equal expected, @enigma.encrypt("Hello, world!", "02715", "040895")
