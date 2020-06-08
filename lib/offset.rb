@@ -13,7 +13,6 @@ class Offset
   end
 
   def date_squared
-    change_date_format
     date.to_i * date.to_i
   end
 
