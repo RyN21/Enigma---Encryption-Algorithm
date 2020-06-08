@@ -21,8 +21,8 @@ class Deshift
   end
 
   def cycle_negative(index, shift_number)
-    shifted = alphabet.rotate(-shift_number)
-    shifted[index]
+    shifted_alphabet = alphabet.rotate(-shift_number)
+    shifted_alphabet[index]
   end
 
   def deshift(message)
@@ -40,7 +40,7 @@ class Deshift
       elsif chars.length > 0 && !alphabet.include?(chars[0])
         decrypted << chars[0]
       end
-      chars.delete_at(0) 
+      chars.delete_at(0)
       if chars.length > 0 && alphabet.include?(chars[0])
         decrypted << cycle_negative(find_index(chars[0]), @deshift_keys[:C])
       elsif chars.length > 0 && !alphabet.include?(chars[0])

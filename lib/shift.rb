@@ -20,8 +20,8 @@ class Shift
   end
 
   def cycle(index, shift_number)
-    shifted = alphabet.rotate(shift_number)
-    shifted[index]
+    shifted_alphabet = alphabet.rotate(shift_number)
+    shifted_alphabet[index]
   end
 
   def shift(message)

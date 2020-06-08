@@ -4,6 +4,7 @@ class Key
   def initialize
     @keys = {A: 0, B: 0, C: 0, D: 0}
     @split_digits = []
+    @five_digit_key = 0
   end
 
   def random_5digits
@@ -21,8 +22,11 @@ class Key
 
   def assign_keys
     random = random_5digits
+    @five_digit_key = random
+    @five_digit_key = @five_digit_key.join.to_i
     pair_digits(random)
-    @keys = @keys.transform_values do |key|
+    require "pry"; binding.pry
+    @keys = @keys.map do |key|
       key = split_digits.shift
     end
   end

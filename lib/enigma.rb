@@ -11,6 +11,8 @@ class Enigma
   def encrypt(message, keys = @key.random_5digits.join, date = Date.today)
     encrypted = Hash.new
     @key.pair_digits(keys.chars)
+    # require "pry"; binding.pry
+    require "pry"; binding.pry
     @key.assign_keys
     @offset = Offset.new(date)
     date = @offset.change_date_format if date == Date.today
