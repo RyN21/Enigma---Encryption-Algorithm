@@ -30,6 +30,7 @@ class DeshiftTest < Minitest::Test
     @deshift = Deshift.new(@key, @offset)
     @key.expects(:random_5digits).returns(['1', '0', '2', '4', '7'])
     @key.assign_keys
+    @offset.change_date_format
     @offset.assign_offsets
 
     expected = ({A: 14, B: 6, C: 24, D: 47})
@@ -42,6 +43,7 @@ class DeshiftTest < Minitest::Test
     @deshift = Deshift.new(@key, @offset)
     @key.expects(:random_5digits).returns(['1', '0', '2', '4', '7'])
     @key.assign_keys
+    @offset.change_date_format
     @offset.assign_offsets
     @deshift.make_deshift_keys
 
@@ -54,6 +56,7 @@ class DeshiftTest < Minitest::Test
     @deshift = Deshift.new(@key, @offset)
     @key.expects(:random_5digits).returns(['1', '0', '2', '4', '7'])
     @key.assign_keys
+    @offset.change_date_format
     @offset.assign_offsets
     @deshift.make_deshift_keys
 
@@ -66,6 +69,7 @@ class DeshiftTest < Minitest::Test
     @deshift = Deshift.new(@key, @offset)
     @key.expects(:random_5digits).returns(['1', '0', '2', '4', '7'])
     @key.assign_keys
+    @offset.change_date_format
     @offset.assign_offsets
     @deshift.make_deshift_keys
 

@@ -64,15 +64,15 @@ class EnigmaTest < Minitest::Test
     assert_equal expected, @enigma.decrypt("nib u,qkuvbs!", "02715")
   end
 
-  def test_it_can_encrypt_with_random_key_and_todays_date
-    @enigma = Enigma.new
-
-    expected = ({
-      encryption: "hello, world!",
-      key: "02715",
-      date: "080620"
-      })
-
-    assert_equal expected, @enigma.encrypt("hello, world!")
-  end
+  # def test_it_can_encrypt_with_random_key_and_todays_date
+  #   @enigma = Enigma.new
+  #
+  #   expected = ({
+  #     encryption: "hello, world!",
+  #     key: "02715",
+  #     date: "080620"
+  #     })
+  #
+  #   assert_equal expected, @enigma.encrypt("hello, world!")
+  # end
 end
