@@ -1,9 +1,11 @@
 class Key
-  attr_reader :keys, :split_digits, :five_digit_key
+  attr_reader :keys,
+              :split_digits,
+              :five_digit_key
 
   def initialize
-    @keys = {A: 0, B: 0, C: 0, D: 0}
-    @split_digits = []
+    @keys           = {A: 0, B: 0, C: 0, D: 0}
+    @split_digits   = []
     @five_digit_key = 0
   end
 

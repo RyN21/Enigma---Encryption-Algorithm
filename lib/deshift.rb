@@ -1,11 +1,14 @@
 class Deshift
-  attr_reader :deshift_keys, :key, :offset, :alphabet
+  attr_reader :deshift_keys,
+              :key,
+              :offset,
+              :alphabet
 
   def initialize(key, offset)
     @deshift_keys = {}
-    @key        = key
-    @offset     = offset
-    @alphabet   = ("a".."z").to_a << " "
+    @key          = key
+    @offset       = offset
+    @alphabet     = ("a".."z").to_a << " "
   end
 
   def make_deshift_keys
@@ -14,7 +17,6 @@ class Deshift
     end
   end
 
-  ### add to a module?!?! VV
   def find_index(data)
     chars = data.chars
     alphabet.index(chars[0])

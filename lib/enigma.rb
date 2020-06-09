@@ -1,7 +1,7 @@
 class Enigma
   attr_reader :message,
               :key,
-              :offset
+              :offset,
               :date
 
   def initialize

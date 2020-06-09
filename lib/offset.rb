@@ -1,10 +1,11 @@
 require 'date'
 
 class Offset
-  attr_reader :date, :offsets
+  attr_reader :date,
+              :offsets
 
   def initialize(date = Date.today)
-    @date = date
+    @date    = date
     @offsets = ({A: 0, B: 0, C: 0, D: 0})
   end
 

@@ -1,5 +1,8 @@
 class Shift
-  attr_reader :shift_keys, :key, :offset, :alphabet
+  attr_reader :shift_keys,
+              :key,
+              :offset,
+              :alphabet
 
   def initialize(key, offset)
     @shift_keys = {}
