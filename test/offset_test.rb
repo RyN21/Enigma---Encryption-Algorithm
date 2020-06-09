@@ -15,14 +15,14 @@ class OffsetTest < Minitest::Test
     @offset = Offset.new
     # @offset2 = Offset.new("January 21, 1990")
     @offset.change_date_format
-    assert_equal '080620', @offset.date
+    assert_equal '090620', @offset.date
     # assert_equal '210190', @offset2.date
   end
 
   def test_it_can_square_date
     @offset = Offset.new
     @offset.change_date_format
-    assert_equal 6499584400, @offset.date_squared
+    assert_equal 8211984400, @offset.date_squared
   end
 
   def test_it_can_take_last_4_digits_from_squared_date
