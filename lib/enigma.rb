@@ -1,6 +1,7 @@
 class Enigma
   attr_reader :message,
               :key,
+              :offset
               :date
 
   def initialize
@@ -17,6 +18,7 @@ class Enigma
     @offset.assign_offsets
     @shift = Shift.new(@key, @offset)
     @shift.make_shift_keys
+
     encrypted[:encryption] = @shift.shift(message)
     encrypted[:key] = keys
     encrypted[:date] = date

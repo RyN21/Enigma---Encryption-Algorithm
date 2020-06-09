@@ -29,6 +29,7 @@ class ShiftTest < Minitest::Test
     @offset = Offset.new
     @shift = Shift.new(@key, @offset)
     @key.expects(:random_5digits).returns(['1', '0', '2', '4', '7'])
+    @key.pair_digits
     @key.assign_keys
     @offset.change_date_format
     @offset.assign_offsets
@@ -43,6 +44,7 @@ class ShiftTest < Minitest::Test
     @offset = Offset.new
     @shift = Shift.new(@key, @offset)
     @key.expects(:random_5digits).returns(['1', '0', '2', '4', '7'])
+    @key.pair_digits
     @key.assign_keys
     @offset.change_date_format
     @offset.assign_offsets
@@ -56,6 +58,7 @@ class ShiftTest < Minitest::Test
     @offset = Offset.new
     @shift = Shift.new(@key, @offset)
     @key.expects(:random_5digits).returns(['1', '0', '2', '4', '7'])
+    @key.pair_digits
     @key.assign_keys
     @offset.change_date_format
     @offset.assign_offsets
@@ -69,6 +72,7 @@ class ShiftTest < Minitest::Test
     @offset = Offset.new
     @shift = Shift.new(@key, @offset)
     @key.expects(:random_5digits).returns(['1', '0', '2', '4', '7'])
+    @key.pair_digits
     @key.assign_keys
     @offset.change_date_format
     @offset.assign_offsets
